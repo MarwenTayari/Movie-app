@@ -16,7 +16,7 @@ setPage(nextPage);
 setFilterPro("");
 setFilterRate("");
 };
-  const[products]=useState( 
+  const[products, setProducts]=useState( 
    [ 
     {
        title : "Outside the Wire", 
@@ -90,15 +90,13 @@ setFilterRate("");
         posterUrl :"https://images-na.ssl-images-amazon.com/images/I/71tUSFn3W0L._AC_SL1000_.jpg",
         rate : 7.5
       }
-
    ] );
 
-   const [filterPro, setFilterPro]=useState("")
+   const [filterPro, setFilterPro]=useState("");
 
    const [cartItems, setCartItems] = useState([]);
 
-   const [filterRate, setFilterRate]=useState("")
-   
+   const [filterRate, setFilterRate]=useState("");
 
    const onAdd = (product) => {
     const exist = cartItems.find((x)=> x.title === product.title);  
@@ -121,6 +119,23 @@ setFilterRate("");
     setFilterRate(e.target.value );
   }
 
+  const [form,setForm] = useState({title : "" , description : "",posterUrl :"" , rate : 0})
+
+  const handlechange = (e) => {  
+   setForm( { ...form,[e.target.name]: e.target.value})    
+  }
+
+  const submit = (e) => {
+    e.preventDefault();
+    if (form.title==="" || form.description==="" || form.posterUrl==="" || form.rate<0 || form.rate>10) 
+    {alert("Please give the requested informations of the Movie ! All the fields below are mandatory.")}
+    else { 
+    setProducts([...products,{...form}]);
+    console.log(products);
+    setForm({title : "" , description : "",posterUrl :"" , rate : 0})
+    alert("The Movie has been succefully added to the Movie List, cheack the bottom of the list, Thanks")}
+  }
+
    let filterProducts = products.filter((product) => {
     return product.title.toLowerCase().includes(filterPro.toLowerCase())
   })
@@ -139,7 +154,7 @@ setFilterRate("");
       </div>
     </header>  
     
-      {page === Page_List && (<MovieList filterProductsRate={filterProductsRate} onAdd={onAdd}/>)  }   
+      {page === Page_List && (<MovieList filterProductsRate={filterProductsRate} onAdd={onAdd} handlechange={handlechange} submit={submit} form={form}/>)  }   
       {page === Page_Cart  && (<MovieCard cartItems = {cartItems} onRemove={onRemove}/>) }  
     </div>
   );
