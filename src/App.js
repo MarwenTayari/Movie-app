@@ -133,7 +133,7 @@ setFilterRate("");
     setProducts([...products,{...form}]);
     console.log(products);
     setForm({title : "" , description : "",posterUrl :"" , rate : 0})
-    alert("The Movie has been succefully added to the Movie List, cheack the bottom of the list, Thanks")}
+    alert("The Movie has been succefully added to the Movie List, check the bottom of the list, Thanks.")}
   }
 
    let filterProducts = products.filter((product) => {
