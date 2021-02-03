@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {  Link } from 'react-router-dom';
 
 const MovieList = (props)=>  {
 
@@ -6,7 +7,6 @@ const {filterProductsRate , onAdd , handlechange, submit, form} = props;
 
     return (
     <div className="movieListDiv">
-       
 
         <h1 className="titleMovieList"> Movie List </h1>
         
@@ -21,7 +21,11 @@ const {filterProductsRate , onAdd , handlechange, submit, form} = props;
                     <br/>
                 <input placeholder="Paste the Movie Poster URL" className="movieAddElem" type="text" name="posterUrl"  onChange={handlechange} value={form.posterUrl}/>
                     <br/>
-                <label className="movieAddElemType">Descreption : </label>
+                <label className="movieAddElemType">Integrated Trailer URL : </label>
+                    <br/>
+                <input placeholder="Paste the Integrated Trailer URL" className="movieAddElem" type="text" name="trailerURL"  onChange={handlechange} value={form.trailerURL}/>
+                    <br/>
+                <label className="movieAddElemType">Description : </label>
                     <br/>
                 <textarea placeholder="Type the Movie descreption" className="desc" type="text" name="description"  onChange={handlechange} value={form.description}/>
                     <br/>
@@ -34,15 +38,18 @@ const {filterProductsRate , onAdd , handlechange, submit, form} = props;
        </div>
 
         <div className="container">
-           {filterProductsRate.map((product , i) => (
-               <div key={i} className="product">
-                   <h3 title ={product.title}>{product.title}</h3>   
-                   <img src={product.posterUrl} alt={product.title}/>
-                   <p className ="descreption"> {product.description}</p>                
-                   <p className ="rate"> Rate : {product.rate}</p> 
-                   <button className ="addButton" onClick={() => onAdd(product)}>Add to Cart</button> 
-               </div>
-           ))}
+                {filterProductsRate.map((product , i) => ( 
+                    <div key={i} className="product">                     
+                            <div>
+                                <h3 title ={product.title}>{product.title}</h3>                               
+                                <img src={product.posterUrl} alt={product.title} style={{display:"Block", marginLeft:"auto", marginRight:"auto"}}/>
+                                <Link to={`/Movie/${product.title}`} className="trailerBtn"><p className="pBtnTrailer"> &#x27A9; View trailer</p></Link>
+                                <p className ="descreption"> {product.description}</p>                
+                                <p className ="rate"> Rate : {product.rate}</p>   
+                                <button className ="addButton" onClick={() => onAdd(product)}>Add to Cart</button> 
+                            </div>    
+                    </div>                
+                ))}               
         </div>       
     </div>
     )

@@ -76,13 +76,44 @@ header {
   margin-top: 0.5em;
 }
 
-.movieListBtn {
-  margin-right: 2em;
+.movieBtn {
+  margin: 0 2em 0 0 ;
+  display: inline-block;
+  color : white;
+  text-decoration: none;
+  transition: all 0.5s ease 0s;
+}
+
+.pBtns {
+  margin: 0;
+  transition: all 0.5s ease 0s;
+}
+
+ .movieBtn :hover   {
+ color : red;
 }
 
 .imgItem {
   display: block;
   margin: 0 auto;
+}
+
+.trailerBtn {
+margin : 1em 0;
+color : white; 
+padding : 0,5em;
+}
+
+.pBtnTrailer {
+  margin-top : 1em;
+  padding : 0;
+  
+  display: inline-block;
+  transition: all 0.5s ease 0s;
+}
+
+.trailerBtn :hover {
+  color : red;
 }
 
 .cardContanier {
@@ -204,6 +235,27 @@ form {
   margin: 0.5em auto;
 }
 
+.DescriptionDiv {
+  position: relative;
+  text-align: center;
+  min-height: 593px;
+}
+
+.pdescription {
+  width: 100%;
+  padding: 0;
+}
+
+.MovieDetail {
+  width: 100%;
+  margin : 0
+}
+
+.videoTrailer {
+  width:900px ;
+  height:490px; 
+}
+
 @media (max-width: 1100px) { 
 .item {
   width:27%;
@@ -234,6 +286,10 @@ form {
   }
   .movieListDiv { 
    margin-top: 5em;
+  }
+  .DescriptionDiv {
+    margin-top: 5em;
+    width: 100%;
   }
   .movieCard {
     margin-top: 5em;
@@ -273,6 +329,9 @@ form {
   .movieListDiv { 
     margin-top: 6em;
    }
+   .DescriptionDiv {
+    margin-top: 6em;
+  }
    .movieCard {
     margin-top: 6em;
     height: 100%;
@@ -318,7 +377,10 @@ form {
   }
   .movieListDiv { 
     margin-top: 8em;
-   } 
+   }
+   .DescriptionDiv {
+    margin-top: 8em;
+  }
    .movieListDiv {
      height: 100%;
    }
