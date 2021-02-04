@@ -11,7 +11,9 @@ const {filterProductsRate } = props;
           <div key={i} className="MovieDetail"> 
             <h1 className="titleMovieList" > {Movie.title}</h1>
             <p className="pdescription">{Movie.description} </p>
-            <iframe title={i}  className="videoTrailer" src={Movie.trailerURL} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <div className="video-responsive">
+                <iframe title={i}  className="videoTrailer" src={Movie.trailerURL} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
           </div>
         ))  
         }
