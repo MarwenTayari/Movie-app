@@ -7,7 +7,7 @@ const HeaderNav = (props) => {
 const {filterProducts, handleInput, handleInputRate, cartItems, filterPro, filterRate} = props; 
 
     return (
-        props.location.pathname ==="/Movie-app" ?
+        props.location.pathname ==="/Movie-app/" ?
         <div>
                 <header> 
                 <Filter filterProducts={filterProducts} handleInput={handleInput} handleInputRate={handleInputRate} filterPro={filterPro} filterRate={filterRate}/>
