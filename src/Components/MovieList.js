@@ -43,7 +43,7 @@ const {filterProductsRate , onAdd , handlechange, submit, form} = props;
                             <div>
                                 <h3 title ={product.title}>{product.title}</h3>                               
                                 <img src={product.posterUrl} alt={product.title} style={{display:"Block", marginLeft:"auto", marginRight:"auto"}}/>
-                                <Link to={`/Movie/${product.title}`} className="trailerBtn"><p className="pBtnTrailer"> &#x27A9; View trailer</p></Link>
+                                <Link to={`/Description/${product.title}`} className="trailerBtn"><p className="pBtnTrailer"> &#x27A9; View trailer</p></Link>
                                 <p className ="descreption"> {product.description}</p>                
                                 <p className ="rate"> Rate : {product.rate}</p>   
                                 <button className ="addButton" onClick={() => onAdd(product)}>Add to Cart</button> 

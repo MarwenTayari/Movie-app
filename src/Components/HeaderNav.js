@@ -12,7 +12,7 @@ const {filterProducts, handleInput, handleInputRate, cartItems, filterPro, filte
                 <header> 
                 <Filter filterProducts={filterProducts} handleInput={handleInput} handleInputRate={handleInputRate} filterPro={filterPro} filterRate={filterRate}/>
                 <div className="Btns">
-                    <Link  to="/MovieCart" className="movieBtn"> <p className="pBtns"> &#x27A9; Movie Cart ({cartItems.length}) </p> </Link>
+                    <Link  to="/Cart" className="movieBtn"> <p className="pBtns"> &#x27A9; Movie Cart ({cartItems.length}) </p> </Link>
                 </div>
                 </header> 
         </div> : 
