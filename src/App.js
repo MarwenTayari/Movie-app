@@ -149,10 +149,10 @@ function App( ) {
 
   return (
     <div className="App">      
-      <Route  path="/" render= {() => <HeaderNav filterProducts={filterProducts} handleInput={handleInput} handleInputRate={handleInputRate} cartItems={cartItems} filterPro={filterPro} filterRate={filterRate}/>}/>
-      <Route exact path="/" render= {() => <MovieList filterProductsRate={filterProductsRate} onAdd={onAdd} handlechange={handlechange} submit={submit} form={form}/> }/>
-      <Route path="/Cart" render= {() => <MovieCard cartItems = {cartItems} onRemove={onRemove}/>}/>
-      <Route path="/Description/:title" render={(props)=> <MovieDescription filterProductsRate={filterProductsRate} {...props}/>}/>
+      <Route  path="/Movie-app" render= {() => <HeaderNav filterProducts={filterProducts} handleInput={handleInput} handleInputRate={handleInputRate} cartItems={cartItems} filterPro={filterPro} filterRate={filterRate}/>}/>
+      <Route exact path="/Movie-app" render= {() => <MovieList filterProductsRate={filterProductsRate} onAdd={onAdd} handlechange={handlechange} submit={submit} form={form}/> }/>
+      <Route path="/Movie-app/Cart" render= {() => <MovieCard cartItems = {cartItems} onRemove={onRemove}/>}/>
+      <Route path="/Movie-app/Description/:title" render={(props)=> <MovieDescription filterProductsRate={filterProductsRate} {...props}/>}/>
     </div>
   );
 }
