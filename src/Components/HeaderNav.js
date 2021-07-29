@@ -19,7 +19,7 @@ const {filterProducts, handleInput, handleInputRate, cartItems, filterPro, filte
         <div>
                 <header> 
                     <div className="Btns">
-                        <Link  to="/Movie-app" className="movieBtn"> <p className="pBtns"> &#x27A9; Movie List </p> </Link>
+                        <Link  to="/Movie-app/" className="movieBtn"> <p className="pBtns"> &#x27A9; Movie List </p> </Link>
                     </div>
                 </header> 
         </div>
