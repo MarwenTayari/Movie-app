@@ -3,7 +3,7 @@ import React from 'react';
 const MovieDescription = (props) => {
 
 const {filterProductsRate } = props;
-
+console.log(props.match.params)
  return (
   <div className="DescriptionDiv">
         {filterProductsRate.filter((el) => el.title=== props.match.params.title)
